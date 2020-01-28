@@ -8,8 +8,8 @@ class GateAddOnSensorTag {
     SensorTag.discover((sensorTag) => {
       debug('found ', sensorTag);
       sensorTag.connectAndSetup(() => {
-        tag.enableAccelerometer(_.noop);
-        tag.setAccelerometerPeriod(10, () => { });
+        sensorTag.enableAccelerometer(_.noop);
+        sensorTag.setAccelerometerPeriod(10, () => { });
       });
     });
   }
