@@ -1,10 +1,11 @@
 const debug = require('debug')('gate-add-on-sensortag');
+const EventEmitter = require('events');
 const _ = require('lodash');
 const SensorTag = require('sensortag');
 
-class GateAddOnSensorTag {
+class GateAddOnSensorTag extends EventEmitter {
   constructor() {
-    this.test = 5;
+    super();
   }
 
   start() {
@@ -13,8 +14,12 @@ class GateAddOnSensorTag {
       debug('found ', sensorTag);
       sensorTag.connectAndSetup(() => {
         debug('connected');
-        sensorTag.enableAccelerometer(_.noop);
-        sensorTag.setAccelerometerPeriod(10, () => { });
+        sensorTag.enableLuxometer(_.noop);
+        sensorTag.setLuxometerPeriod(10, _.noop);
+        sensorTag.on('luxometerChange', (data) => {
+          console.log('READ DATA', data);
+          this.emit('data', data);
+        });
       });
     });
   }
