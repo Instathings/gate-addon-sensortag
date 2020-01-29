@@ -1,10 +1,11 @@
 {
   "name": "gate-addon-sensortag",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "DEBUG=gate-add-on-sensortag node test.js"
   },
   "repository": {
     "type": "git",
