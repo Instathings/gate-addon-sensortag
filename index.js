@@ -20,7 +20,7 @@ class GateAddOnSensorTag extends EventEmitter {
       pres: 0,
       gyro: { x: 0, y: 0, z: 0 },
       magn: { x: 0, y: 0, z: 0 },
-    }
+    };
   }
 
   start() {
@@ -38,7 +38,7 @@ class GateAddOnSensorTag extends EventEmitter {
 
         setInterval(() => {
           debug(this.data);
-          this.emit('data', data);
+          this.emit('data', this.data);
         }, 5000);
       });
     });
