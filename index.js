@@ -1,7 +1,7 @@
 const debug = require('debug')('gate-add-on-sensortag');
 const EventEmitter = require('events');
 const _ = require('lodash');
-const SensorTag = require('sensortag');
+const SensorTag = require('@instathings/sensortag');
 
 const enableSensors = require('./sensors/enable');
 const setPeriod = require('./sensors/setPeriod');
