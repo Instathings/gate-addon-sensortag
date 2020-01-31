@@ -1,5 +1,5 @@
 {
-  "name": "gate-addon-sensortag",
+  "name": "@instathings/gate-addon-sensortag",
   "version": "0.0.9",
   "description": "",
   "main": "index.js",
