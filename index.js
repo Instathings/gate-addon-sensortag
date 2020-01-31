@@ -10,7 +10,7 @@ const notify = require('./sensors/notify');
 
 class GateAddOnSensorTag extends EventEmitter {
 
-  constructor() {
+  constructor(allDevices) {
     super();
     this.data = {
       accel: 0,
@@ -21,10 +21,13 @@ class GateAddOnSensorTag extends EventEmitter {
       gyro: { x: 0, y: 0, z: 0 },
       magn: { x: 0, y: 0, z: 0 },
     };
+    this.knownDevices = allDevices.bluetooth || [];
+
   }
 
-  start() {
+  init() {
     debug('STARTING');
+    console.log('STARTTT')
     SensorTag.discover((sensorTag) => {
       debug('Found one');
       sensorTag.connectAndSetup((err) => {
@@ -35,13 +38,16 @@ class GateAddOnSensorTag extends EventEmitter {
         setPeriod(sensorTag);
         notify(sensorTag);
         setListeners.call(this, sensorTag);
-
-        setInterval(() => {
-          debug(this.data);
-          this.emit('data', this.data);
-        }, 5000);
+        this.start();
       });
     });
+  }
+
+  start(device) {
+    setInterval(() => {
+      debug(this.data);
+      this.emit('data', this.data);
+    }, 5000);
   }
 
   stop() { }
