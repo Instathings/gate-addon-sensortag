@@ -1,6 +1,5 @@
 const debug = require('debug')('gate-add-on-sensortag');
 const EventEmitter = require('events');
-const _ = require('lodash');
 const SensorTag = require('@instathings/sensortag');
 
 const enableSensors = require('./sensors/enable');
@@ -26,10 +25,9 @@ class GateAddOnSensorTag extends EventEmitter {
   }
 
   init() {
-    debug('STARTING');
-    console.log('STARTTT')
+    debug('Discover start');
     SensorTag.discover((sensorTag) => {
-      debug('Found one');
+      debug('Found one SensorTag');
       sensorTag.connectAndSetup((err) => {
         if (err) {
           throw err;
