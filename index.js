@@ -1,4 +1,4 @@
-const debug = require('debug')('gate-add-on-sensortag');
+const debug = require('debug')('gate-addon-sensortag');
 const EventEmitter = require('events');
 const SensorTag = require('@instathings/sensortag');
 

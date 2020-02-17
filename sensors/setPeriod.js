@@ -1,3 +1,5 @@
+const debug = require('debug')('gate-addon-sensortag');
+
 function setCallback(err) {
   if (err) {
     debug(err);
