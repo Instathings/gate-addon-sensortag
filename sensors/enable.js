@@ -1,3 +1,5 @@
+const debug = require('debug')('gate-addon-sensortag');
+
 function enableCallback(err) {
   if (err) {
     debug(err);
@@ -11,4 +13,4 @@ module.exports = function enable(tag) {
   tag.enableBarometricPressure(enableCallback);
   tag.enableGyroscope(enableCallback);
   tag.enableMagnetometer(enableCallback);
-}
+};
