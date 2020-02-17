@@ -1,6 +1,6 @@
 {
   "name": "@instathings/gate-addon-sensortag",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Instathings addon for supporting TI Sensortag CC2650",
   "main": "index.js",
   "scripts": {
