@@ -2,13 +2,13 @@
 
 This addon extends Instathings Gate for supporting TI SensorTag CC2650.
 
-## Device pairing
+### Device pairing
 
 Pairing a new SensorTag is quite easy: 
 - start device pairing procedure from the [Editor](https://editor.instathings.io) 
 - turn the sensor on when requested
 
-### Enabled sensors
+### Enabled sensors
 
 By default all sensors are enabled.
 
