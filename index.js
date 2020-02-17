@@ -8,7 +8,6 @@ const setListeners = require('./sensors/setListeners');
 const notify = require('./sensors/notify');
 
 class GateAddOnSensorTag extends EventEmitter {
-
   constructor(allDevices) {
     super();
     this.data = {
@@ -21,7 +20,6 @@ class GateAddOnSensorTag extends EventEmitter {
       magn: { x: 0, y: 0, z: 0 },
     };
     this.knownDevices = allDevices.bluetooth || [];
-
   }
 
   init() {
