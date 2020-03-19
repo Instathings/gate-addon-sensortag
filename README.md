@@ -38,3 +38,6 @@ You can expect a payload structure like the following:
       magn: { x: 0, y: 0, z: 0 },
 }
 ```
+
+### License
+gate-addon-sensortag is [fair-code](http://faircode.io/) licensed under [Apache 2.0 with Commons Clause](./LICENSE.md)
