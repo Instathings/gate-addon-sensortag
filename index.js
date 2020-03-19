@@ -47,6 +47,8 @@ class GateAddOnSensorTag extends EventEmitter {
   }
 
   stop() { }
+
+  control() { }
 }
 
 module.exports = GateAddOnSensorTag;
